@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 // fonction pour créer un token
 const createToken = (_id) => {
-  return jwt.sign({ _id }, process.env.SECRET, { expiresIn: '3d' });
+  return jwt.sign({ _id }, process.env.SECRET, { expiresIn: '1h' });
 };
 
 // Controller pour obtenir tous les utilisateurs
