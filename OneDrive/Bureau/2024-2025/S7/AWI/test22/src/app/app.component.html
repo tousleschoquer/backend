@@ -1,0 +1,30 @@
+<div>
+  <h1>Users list</h1> 
+  <app-user-list [users]="users" (userSelected)="onUserSelected($event)"></app-user-list>
+
+  <app-user-detail [user]="selectedUser"></app-user-detail>
+
+  <h3>Add New User</h3>
+  <form (ngSubmit)="addNewUser()">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" [(ngModel)]="newUserFirstName" name="firstName" required>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" [(ngModel)]="newUserLastName" name="lastName" required>
+
+    <label for="role">Role:</label>
+    <input type="text" id="role" [(ngModel)]="newUserRole" name="role" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" [(ngModel)]="newUserEmail" name="email" required>
+
+    <label for="tel">Telephone:</label>
+    <input type="tel" id="tel" [(ngModel)]="newUserTel" name="tel" required>
+
+    <button type="submit">Add User</button>
+  </form>
+
+  <app-message></app-message>
+</div>
+
+<router-outlet></router-outlet>
